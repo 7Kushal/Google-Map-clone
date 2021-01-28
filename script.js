@@ -1,32 +1,7 @@
-mapboxgl.accessToken =
-  "pk.eyJ1Ijoia3VzaGFsMTIzIiwiYSI6ImNqcDJvbnN3OTA5ZWUzcW5ybG1pdmZleGcifQ.wWgAdBuzneB_3IwsaUqbag"
+const express = require('express');
+const app = express();
 
-navigator.geolocation.getCurrentPosition(successLocation, errorLocation, {
-  enableHighAccuracy: true
+app.get('/',(req,res)=>{
+  res.sendFile(__dirname+"/index.html");
 })
-
-function successLocation(position) {
-  setupMap([position.coords.longitude, position.coords.latitude])
-}
-
-function errorLocation() {
-  setupMap([-2.24, 53.48])
-}
-
-function setupMap(center) {
-  const map = new mapboxgl.Map({
-    container: "map",
-    style: "mapbox://styles/mapbox/streets-v11",
-    center: center,
-    zoom: 15
-  })
-
-  const nav = new mapboxgl.NavigationControl()
-  map.addControl(nav)
-
-  var directions = new MapboxDirections({
-    accessToken: mapboxgl.accessToken
-  })
-
-  map.addControl(directions, "top-left")
-}
+app.listen(process.env.PORT||4000);

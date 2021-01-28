@@ -1,0 +1,22 @@
+{
+  "name": "google-maps-clone-main",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/7Kushal/Google-Map-clone.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/7Kushal/Google-Map-clone/issues"
+  },
+  "homepage": "https://github.com/7Kushal/Google-Map-clone#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
